@@ -12,7 +12,6 @@ const Home: React.FC = () => {
       const response = await fetch(
         "https://nodejs-quotations-api.vercel.app/quotes/random"
       );
-      console.log(response)
       if (!response.ok) {
         throw new Error("Error on retrieving content");
       }
