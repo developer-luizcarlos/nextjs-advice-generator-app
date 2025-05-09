@@ -3,7 +3,9 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Quote } from "@/types/quotes.types";
 
-const apiurl: string = process.env["NEXT_PUBLIC_API_URL"]!;
+const apiurl: string =
+  process.env["NEXT_PUBLIC_API_URL"] ||
+  "https://nodejs-quotations-api.vercel.app/quotes/random";
 
 const Home: React.FC = () => {
   const [quote, setQuotes] = useState<Quote>();
@@ -11,7 +13,7 @@ const Home: React.FC = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(apiurl);
+      const response = await fetch(apiurl!);
       if (!response.ok) throw new Error("Error on retrieving content");
       const responseToJSON = await response.json();
       setQuotes(responseToJSON);
