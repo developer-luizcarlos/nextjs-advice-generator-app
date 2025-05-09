@@ -30,7 +30,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="h-dvh bg-slate-900 flex items-center justify-center">
-      <article className="bg-slate-800 p-8 rounded-xl min-w-[250px] w-full max-w-[500px] flex flex-col items-center relative">
+      <article className="bg-slate-800 p-8 rounded-xl min-w-[270px] w-[90%] max-w-[650px] min-h-[230px] flex flex-col items-center justify-between relative">
         <h2 className="text-green-300 text-xl text-center font-medium">
           {`${loading ? "Advice" : `Advice - ${quote?.author}`}`}
         </h2>
@@ -45,8 +45,8 @@ const Home: React.FC = () => {
           <span className="w-full h-[0.5px] bg-blue-200"></span>
         </div>
         <button
-          className="absolute top-[90%] p-3 cursor-pointer bg-green-300 rounded-full transition duration-300 
-             hover:shadow-[0_0_20px_hsl(150,100%,66%)]"
+          className="absolute top-[90%] p-3 cursor-pointer bg-green-300 rounded-full transition outline-none duration-300 
+             hover:shadow-[0_0_20px_hsl(150,100%,66%)] focus:shadow-[0_0_20px_hsl(150,100%,66%)]"
           onClick={setRandomQuote}
         >
           <Image
